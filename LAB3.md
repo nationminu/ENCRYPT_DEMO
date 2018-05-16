@@ -11,6 +11,9 @@ sudo apt-get install apache2
 sudo a2enmod ssl
 ```
 
++ Apache 웹서버의 SSL 모듈 활성화
+
+
 ### 3. Apache 웹서버 기동
 ```
 sudo /etc/init.d/apache2 start
@@ -41,7 +44,12 @@ Organization Name (eg, company) [Internet Widgits Pty Ltd]:semyung
 Organizational Unit Name (eg, section) []:semyung
 Common Name (e.g. server FQDN or YOUR name) []:www.semyung.com
 Email Address []:test@localhost
+
+ls -al /etc/apache2/ssl
 ```
+
++ 개인키를 생성하고 키를 이용하여 사설 인증서파일 생성
+
 
 ### 5. Apache 웹서버 SSL 설정
 ```
@@ -64,6 +72,9 @@ sudo vi /etc/apache2/sites-available/default-ssl.conf
 
 sudo a2ensite default-ssl.conf
 ```
+
++ Apache 웹서버의 SSL 설정파일을 수정하고 사용할수 있도록 확성화
+
 
 ### 6. Apache 웹서버 재기동
 ```
