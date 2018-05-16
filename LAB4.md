@@ -4,6 +4,8 @@ Tomcat 을 이용한 쇼핑몰(jpetstore) 설치
 ### 1. java 설치
 ```
 sudo apt-get install openjdk-8-jdk
+
+java -version
 ```
 
 ### 2. tomcat 설치
