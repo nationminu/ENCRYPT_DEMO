@@ -9,4 +9,4 @@ Apache(SSL) 설치 : [https://github.com/nationminu/ENCRYPT_DEMO/blob/master/LAB
 
 Tomcat(jpetstore) 설치 : [https://github.com/nationminu/ENCRYPT_DEMO/blob/master/LAB4.md]
 
-TCPDUMP    : [https://github.com/nationminu/ENCRYPT_DEMO/blob/master/LAB6.md]
+TCPDUMP    : [https://github.com/nationminu/ENCRYPT_DEMO/blob/master/LAB5.md]
