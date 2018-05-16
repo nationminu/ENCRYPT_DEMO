@@ -22,9 +22,10 @@ ps -ef|grep tomcat
 sudo a2enmod proxy
 sudo a2enmod proxy_http 
 
-sudo vi apache.conf
+sudo vi /etc/apache2/apache.conf
 
 ProxyPass /petstore http://127.0.0.1:8080/petstore
+ProxyPassReverse /petstore http://127.0.0.1:8080/petstore
 
 sudo /etc/init.d/apache2 restart
 ```
