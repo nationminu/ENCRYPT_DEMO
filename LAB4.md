@@ -22,6 +22,7 @@ ps -ef|grep tomcat
 sudo a2enmod proxy
 sudo a2enmod proxy_http 
 
+## 맨하단에 ProxyPass 추가
 sudo vi /etc/apache2/apache.conf
 
 ProxyPass /petstore http://127.0.0.1:8080/petstore
