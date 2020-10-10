@@ -54,22 +54,7 @@ ls -al /etc/apache2/ssl
 ### 5. Apache 웹서버 SSL 설정
 ```
 sudo vi /etc/apache2/sites-available/default-ssl.conf 
-
-<IfModule mod_ssl.c>
-    <VirtualHost _default_:443>
-        ServerAdmin admin@example.com
-        ServerName your_domain.com
-        ServerAlias www.your_domain.com
-        DocumentRoot /var/www/html
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
-        SSLEngine on
-        SSLCertificateFile /etc/apache2/ssl/apache.crt
-        SSLCertificateKeyFile /etc/apache2/ssl/apache.key
-        ....
-    </VirtualHost>
-</IfModule>
-
+ 
 sudo a2ensite default-ssl.conf
 ```
 
