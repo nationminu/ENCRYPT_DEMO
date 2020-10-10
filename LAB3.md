@@ -20,6 +20,7 @@ sudo /etc/init.d/apache2 start
 ```
 
 ### 4. 개인키 및 사설 인증서 생성
+> OS 설치시 인증서가 포함되어 있음으로 인증서 생성 과정만 확인
 ```
 sudo mkdir /etc/apache2/ssl
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
@@ -52,13 +53,30 @@ ls -al /etc/apache2/ssl
 
 
 ### 5. Apache 웹서버 SSL 설정
+> OS 설치시 인증서가 포함되어 있음으로 "sudo a2ensite default-ssl.conf" 만 진행
 ```
 sudo vi /etc/apache2/sites-available/default-ssl.conf 
- 
+
+<IfModule mod_ssl.c>
+    <VirtualHost _default_:443>
+        ServerAdmin admin@example.com
+        ServerName your_domain.com
+        ServerAlias www.your_domain.com
+        DocumentRoot /var/www/html
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        SSLEngine on
+        SSLCertificateFile /etc/apache2/ssl/apache.crt
+        SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+        ....
+    </VirtualHost>
+</IfModule>
+
+
 sudo a2ensite default-ssl.conf
 ```
 
-+ Apache 웹서버의 SSL 설정파일을 수정하고 사용할수 있도록 확성화
++ Apache 웹서버의 SSL 설정파일을 수정하고 사용할수 있도록 활성화
 
 
 ### 6. Apache 웹서버 재기동
